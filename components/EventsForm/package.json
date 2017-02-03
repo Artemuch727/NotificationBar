@@ -1,0 +1,6 @@
+{
+  "name": "EventsForm",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./EventsForm.js"
+}

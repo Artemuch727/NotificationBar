@@ -17,7 +17,25 @@
   text-decoration: none;
 }
 
+.eventsList{
+  min-width: 350px;
+  text-align: left;
+  /*position: absolute;
+  right: -45px;*/
+  background-color: white;
+  border: 1px grey solid;
+}
 
+
+
+@-webkit-keyframes fade-in {
+	from   { opacity: 0; }
+	to { opacity: 1; }
+}
+@-webkit-keyframes move-up {
+	from   { bottom: 30px; }
+	to { bottom: 42px; }
+}
 
 @media screen and (max-width: 1024px) {
 
@@ -28,5 +46,6 @@
   .row {
     padding: 0 16px;
   }
+
 
 }

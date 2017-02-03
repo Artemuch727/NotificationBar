@@ -11,8 +11,10 @@
 import React, { PropTypes } from 'react';
 import cx from 'classnames';
 import Header from './Header';
+import EventsForm from '../EventsForm';
 import Footer from '../Footer';
 import s from './Layout.css';
+
 
 class Layout extends React.Component {
 
@@ -20,21 +22,35 @@ class Layout extends React.Component {
     className: PropTypes.string,
   };
 
+  constructor(props) {
+    super(props);
+    this.state  = {
+        popupIsShowing: false
+    }
+  }
+
+  togglePopup(){
+    this.setState({popupIsShowing: !this.state.popupIsShowing})
+  }
+
   componentDidMount() {
-    window.componentHandler.upgradeElement(this.root);
+    //window.componentHandler.upgradeElement(this.root);
   }
 
   componentWillUnmount() {
-    window.componentHandler.downgradeElements(this.root);
+   // window.componentHandler.downgradeElements(this.root);
   }
 
   render() {
     return (
       <div className="mdl-layout mdl-js-layout" ref={node => (this.root = node)}>
-        <div className="mdl-layout__inner-container">
-          <Header />
+        <div className="mdl-layout__inner-container" style={{minHeight: "400px"}}>
+          <Header
+            togglePopup = {this.togglePopup.bind(this)}
+            isShowing = {this.state.popupIsShowing}/>
+          <EventsForm
+            togglePopup = {this.togglePopup.bind(this)}/>
           <main className="mdl-layout__content">
-            <div {...this.props} className={cx(s.content, this.props.className)} />
             <Footer />
           </main>
         </div>

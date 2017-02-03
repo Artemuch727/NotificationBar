@@ -17,7 +17,20 @@
   text-decoration: none;
 }
 
+.eventsForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 150px;
+  width: 60%;
+}
 
+.eventsForm__input {
+  display: flex;
+  width: 58%;
+  align-items: baseline;
+  justify-content: space-between;
+}
 
 @media screen and (max-width: 1024px) {
 
@@ -28,5 +41,6 @@
   .row {
     padding: 0 16px;
   }
+
 
 }
